@@ -72,7 +72,14 @@ function rjw_settings_init(  ) {
 		'rjw_pluginPage_section'
 	);
 
-
+	/*Creates setting for State Not Required*/
+	add_settings_field(
+		'rjw_checkbox_field_state_not_required',
+		__( 'Makes State Field in WooCommerce not required ', 'rjw-plugin' ),
+		'rjw_checkbox_field_style_state_not_required',
+		'pluginPage',
+		'rjw_pluginPage_section'
+	);
 
 
 
@@ -130,7 +137,15 @@ function rjw_checkbox_field_style_login_render(  ) {
 
 }
 
+/*State Not Required Checkbox*/
+function rjw_checkbox_field_style_state_not_required(  ) {
 
+	$options = get_option( 'rjw_settings' );
+	?>
+	<input type='checkbox' name='rjw_settings[rjw_checkbox_field_state_not_required]' <?php if(isset($options['rjw_checkbox_field_state_not_required'])){checked( $options['rjw_checkbox_field_state_not_required'], 1 );} ?> value='1'>
+	<?php
+
+}
 
 
 
