@@ -1,16 +1,24 @@
-<style>
-#user_pass {
-    width: 95%;
-}
-</style>
-
 <?php
 
 
 
 /*Lets you add a form to login anywhere*/
 function rjw_login_form_anywhere( $atts, $content = null ) {
+?>
 
+<style>
+/*Sets password box width*/
+#user_pass {
+    width: 95%;
+}
+/*Sets Login box width*/
+#user_login {
+    width: 95%;
+}
+
+</style>
+
+<?php
 	extract( shortcode_atts( array('redirect' => ''), $atts ) );
 
 	if (!is_user_logged_in()) { 
